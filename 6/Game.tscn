@@ -21,3 +21,7 @@ material/0 = SubResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Ground/StaticBody"]
 shape = SubResource( 3 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.996409, -0.0846686, 5.56523e-05, 0.0846194, 0.995808, -0.034725, 0.0028847, 0.034605, 0.999397, 0.452872, 17.4532, 0 )
+shadow_enabled = true
