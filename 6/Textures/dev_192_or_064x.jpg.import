@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/seamless-green-grass-pattern_1284-52275.jpg-b47922060642c4055d7b0ec39381218d.s3tc.stex"
-path.etc2="res://.import/seamless-green-grass-pattern_1284-52275.jpg-b47922060642c4055d7b0ec39381218d.etc2.stex"
+path.s3tc="res://.import/dev_192_or_064x.jpg-dccc968048b0358c0a6ab4981cd59f81.s3tc.stex"
+path.etc2="res://.import/dev_192_or_064x.jpg-dccc968048b0358c0a6ab4981cd59f81.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/seamless-green-grass-pattern_1284-52275.jpg"
-dest_files=[ "res://.import/seamless-green-grass-pattern_1284-52275.jpg-b47922060642c4055d7b0ec39381218d.s3tc.stex", "res://.import/seamless-green-grass-pattern_1284-52275.jpg-b47922060642c4055d7b0ec39381218d.etc2.stex" ]
+source_file="res://Textures/dev_192_or_064x.jpg"
+dest_files=[ "res://.import/dev_192_or_064x.jpg-dccc968048b0358c0a6ab4981cd59f81.s3tc.stex", "res://.import/dev_192_or_064x.jpg-dccc968048b0358c0a6ab4981cd59f81.etc2.stex" ]
 
 [params]
 
