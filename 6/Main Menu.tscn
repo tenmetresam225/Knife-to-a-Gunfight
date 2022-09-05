@@ -10,5 +10,4 @@ margin_bottom = 20.0
 text = "Play"
 script = ExtResource( 1 )
 scene_to_load = "res://Game.tscn"
-
 [connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
