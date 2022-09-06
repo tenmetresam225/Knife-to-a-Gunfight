@@ -19,6 +19,10 @@ config/name="Knife to a Gunfight"
 run/main_scene="res://Main Menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [input]
 
 player_forward={
