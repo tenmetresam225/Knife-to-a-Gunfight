@@ -12,5 +12,5 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-scene_to_load = "res://City.tscn"
+scene_to_load = "res://Levels.tscn"
 [connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
