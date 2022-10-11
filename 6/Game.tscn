@@ -1,198 +1,214 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Textures/dev_192_or_064x.jpg" type="Texture" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Textures/dev_192_gr_064x.jpg" type="Texture" id=3]
+[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=4]
 
-[sub_resource type="PlaneMesh" id=1]
+[sub_resource type="NavigationMesh" id=1]
+vertices = PoolVector3Array( -47.3581, 9.23401, -43.2011, -46.3581, 9.23401, -49.2011, -48.3581, 9.23401, -49.2011, -47.3581, 9.23401, -43.2011, -48.3581, 9.23401, -49.2011, -48.3581, 9.23401, -37.2011, -47.3581, 9.23401, -37.2011, -48.3581, 9.23401, 36.7989, -48.3581, 9.23401, 42.7989, -47.3581, 9.23401, 41.7989, -47.3581, 9.23401, 35.7989, 50.6419, 9.23401, -49.2011, 48.6419, 9.23401, -49.2011, 49.6419, 9.23401, -38.2011, 50.6419, 9.23401, -37.2011, -48.3581, 9.23401, -25.2011, -48.3581, 9.23401, -13.2011, -47.3581, 9.23401, -13.2011, -47.3581, 9.23401, -25.2011, 50.6419, 9.23401, -37.2011, 49.6419, 9.23401, -38.2011, 49.6419, 9.23401, -26.2011, 50.6419, 9.23401, -25.2011, -47.3581, 9.23401, -13.2011, -48.3581, 9.23401, -13.2011, -48.3581, 9.23401, -7.2011, -47.3581, 9.23401, -1.2011, 50.6419, 9.23401, -25.2011, 49.6419, 9.23401, -26.2011, 49.6419, 9.23401, -14.2011, 50.6419, 9.23401, -13.2011, -46.3581, 9.23401, 47.7989, -47.3581, 9.23401, 41.7989, -48.3581, 9.23401, 42.7989, -48.3581, 9.23401, 49.7989, 50.6419, 9.23401, -13.2011, 49.6419, 9.23401, -14.2011, 49.6419, 9.23401, -8.2011, 50.6419, 9.23401, -7.2011, -12.3581, 9.23401, 48.7989, -11.3581, 9.23401, 47.7989, -23.3581, 9.23401, 47.7989, -24.3581, 9.23401, 48.7989, 50.6419, 9.23401, -7.2011, 49.6419, 9.23401, -8.2011, 49.6419, 9.23401, -1.2011, 50.6419, 9.23401, -0.201099, -31.3581, 9.23401, 48.7989, -24.3581, 9.23401, 48.7989, -23.3581, 9.23401, 47.7989, -35.3581, 9.23401, 47.7989, 50.6419, 9.23401, -0.201099, 49.6419, 9.23401, -1.2011, 49.6419, 9.23401, 10.7989, 50.6419, 9.23401, 11.7989, -48.3581, 9.23401, -7.2011, -48.3581, 9.23401, -0.201099, -47.3581, 9.23401, -1.2011, 50.6419, 9.23401, 11.7989, 49.6419, 9.23401, 10.7989, 49.6419, 9.23401, 16.7989, 50.6419, 9.23401, 17.7989, -12.3581, 9.23401, 48.7989, -6.35806, 9.23401, 48.7989, -11.3581, 9.23401, 47.7989, 50.6419, 9.23401, 17.7989, 49.6419, 9.23401, 16.7989, 49.6419, 9.23401, 23.7989, 50.6419, 9.23401, 24.7989, -48.3581, 9.23401, 11.7989, -48.3581, 9.23401, 17.7989, -47.3581, 9.23401, 16.7989, -47.3581, 9.23401, 10.7989, 50.6419, 9.23401, 24.7989, 49.6419, 9.23401, 23.7989, 49.6419, 9.23401, 29.7989, 50.6419, 9.23401, 36.7989, 50.6419, 9.23401, 24.7989, 49.6419, 9.23401, 29.7989, 49.6419, 9.23401, 36.7989, -47.3581, 9.23401, 10.7989, -47.3581, 9.23401, -1.2011, -48.3581, 9.23401, -0.201099, -48.3581, 9.23401, 11.7989, 50.6419, 9.23401, 42.7989, 50.6419, 9.23401, 36.7989, 49.6419, 9.23401, 36.7989, 48.6419, 9.23401, 47.7989, -37.3581, 9.23401, 48.7989, -35.3581, 9.23401, 47.7989, -46.3581, 9.23401, 47.7989, -48.3581, 9.23401, 49.7989, 50.6419, 9.23401, 49.7989, 50.6419, 9.23401, 42.7989, 48.6419, 9.23401, 47.7989, 44.6419, 9.23401, 48.7989, 50.6419, 9.23401, 49.7989, 48.6419, 9.23401, 47.7989, 44.6419, 9.23401, 48.7989, 48.6419, 9.23401, 47.7989, 36.6419, 9.23401, 47.7989, 38.6419, 9.23401, 48.7989, -47.3581, 9.23401, 23.7989, -47.3581, 9.23401, 16.7989, -48.3581, 9.23401, 17.7989, -48.3581, 9.23401, 24.7989, 31.6419, 9.23401, 48.7989, 38.6419, 9.23401, 48.7989, 36.6419, 9.23401, 47.7989, 31.6419, 9.23401, 48.7989, 36.6419, 9.23401, 47.7989, 24.6419, 9.23401, 47.7989, 25.6419, 9.23401, 48.7989, -48.3581, 9.23401, 24.7989, -48.3581, 9.23401, 36.7989, -47.3581, 9.23401, 35.7989, -47.3581, 9.23401, 23.7989, 18.6419, 9.23401, 48.7989, 25.6419, 9.23401, 48.7989, 24.6419, 9.23401, 47.7989, 12.6419, 9.23401, 47.7989, -37.3581, 9.23401, 48.7989, -31.3581, 9.23401, 48.7989, -35.3581, 9.23401, 47.7989, 12.6419, 9.23401, 48.7989, 18.6419, 9.23401, 48.7989, 12.6419, 9.23401, 47.7989, 0.641945, 9.23401, 48.7989, 12.6419, 9.23401, 48.7989, 12.6419, 9.23401, 47.7989, 0.641945, 9.23401, 47.7989, -47.3581, 9.23401, -25.2011, -47.3581, 9.23401, -37.2011, -48.3581, 9.23401, -37.2011, -48.3581, 9.23401, -25.2011, -6.35806, 9.23401, 48.7989, 0.641945, 9.23401, 48.7989, 0.641945, 9.23401, 47.7989, -11.3581, 9.23401, 47.7989, -38.3581, -1.26599, -46.2011, -45.3581, -1.26599, -46.2011, -45.3581, -1.26599, -35.2011, -0.358055, -1.26599, -12.2011, 9.64194, -1.26599, -12.2011, 9.64194, -1.26599, -24.2011, -31.3581, -1.26599, -46.2011, -38.3581, -1.26599, -46.2011, -45.3581, -1.26599, -35.2011, 9.64194, -1.26599, -24.2011, 11.6419, -1.26599, -25.2011, 11.6419, -1.26599, -46.2011, 3.64194, -1.26599, -46.2011, -9.35806, -1.26599, -12.2011, -0.358055, -1.26599, -12.2011, 9.64194, -1.26599, -24.2011, -3.35806, -1.26599, -46.2011, -10.3581, -1.26599, -46.2011, -17.3581, -1.26599, -46.2011, -45.3581, -1.26599, -24.2011, -45.3581, -1.26599, -13.2011, -11.3581, -1.26599, -10.2011, -9.35806, -1.26599, -12.2011, -10.3581, -1.26599, -46.2011, -24.3581, -1.26599, -46.2011, -31.3581, -1.26599, -46.2011, -45.3581, -1.26599, -35.2011, 9.64194, -1.26599, -24.2011, 3.64194, -1.26599, -46.2011, -3.35806, -1.26599, -46.2011, -45.3581, -1.26599, -2.2011, -11.3581, -1.26599, -2.2011, -11.3581, -1.26599, -10.2011, -45.3581, -1.26599, -13.2011, -17.3581, -1.26599, -46.2011, -24.3581, -1.26599, -46.2011, -45.3581, -1.26599, -35.2011, -45.3581, -1.26599, -24.2011, 47.6419, -1.26599, -39.2011, 47.6419, -1.26599, -46.2011, 38.6419, -1.26599, -46.2011, 14.6419, -1.26599, -24.2011, 14.6419, -1.26599, -18.2011, 28.6419, -1.26599, -18.2011, 29.6419, -1.26599, -21.2011, 11.6419, -1.26599, -25.2011, 14.6419, -1.26599, -24.2011, 32.6419, -1.26599, -21.2011, 47.6419, -1.26599, -32.2011, 29.6419, -1.26599, -46.2011, 20.6419, -1.26599, -46.2011, 32.6419, -1.26599, -21.2011, 33.6419, -1.26599, -18.2011, 47.6419, -1.26599, -18.2011, 47.6419, -1.26599, -25.2011, 20.6419, -1.26599, -46.2011, 11.6419, -1.26599, -46.2011, 11.6419, -1.26599, -25.2011, 47.6419, -1.26599, -32.2011, 47.6419, -1.26599, -39.2011, 38.6419, -1.26599, -46.2011, 29.6419, -1.26599, -46.2011, 14.6419, -1.26599, -24.2011, 29.6419, -1.26599, -21.2011, 32.6419, -1.26599, -21.2011, 32.6419, -1.26599, -21.2011, 47.6419, -1.26599, -25.2011, 47.6419, -1.26599, -32.2011, 9.64194, -1.26599, -3.2011, 9.64194, -1.26599, -7.2011, 1.64194, -1.26599, -7.2011, 1.64194, -1.26599, 6.7989, 9.64194, -1.26599, 6.7989, 9.64194, -1.26599, 1.7989, 1.64194, -1.26599, -7.2011, -6.35806, -1.26599, -7.2011, -6.35806, -1.26599, -0.201099, 1.64194, -1.26599, 6.7989, 9.64194, -1.26599, 1.7989, 9.64194, -1.26599, -3.2011, -6.35806, -1.26599, -0.201099, -6.35806, -1.26599, 6.7989, 1.64194, -1.26599, 6.7989, 35.6419, -1.26599, 22.7989, 36.6419, -1.26599, 24.7989, 47.6419, -1.26599, 24.7989, 47.6419, -1.26599, 13.7989, 47.6419, -1.26599, 2.7989, 47.6419, -1.26599, -8.2011, 32.6419, -1.26599, -15.2011, 28.6419, -1.26599, 22.7989, 35.6419, -1.26599, 22.7989, 47.6419, -1.26599, 13.7989, 14.6419, -1.26599, 11.7989, 14.6419, -1.26599, 21.7989, 28.6419, -1.26599, 22.7989, 13.6419, -1.26599, -2.2011, 9.64194, -1.26599, -3.2011, 9.64194, -1.26599, 1.7989, 14.6419, -1.26599, 1.7989, 29.6419, -1.26599, -15.2011, 28.6419, -1.26599, -18.2011, 14.6419, -1.26599, -18.2011, 14.6419, -1.26599, -9.2011, 14.6419, -1.26599, -9.2011, 13.6419, -1.26599, -2.2011, 14.6419, -1.26599, 1.7989, 32.6419, -1.26599, -15.2011, 29.6419, -1.26599, -15.2011, 14.6419, -1.26599, 1.7989, 14.6419, -1.26599, 11.7989, 28.6419, -1.26599, 22.7989, 47.6419, -1.26599, 13.7989, 47.6419, -1.26599, 2.7989, 32.6419, -1.26599, -15.2011, 47.6419, -1.26599, -18.2011, 33.6419, -1.26599, -18.2011, 32.6419, -1.26599, -15.2011, 47.6419, -1.26599, -8.2011, -45.3581, -1.26599, 33.7989, -45.3581, -1.26599, 45.7989, -38.3581, -1.26599, 45.7989, 9.64194, -1.26599, 22.7989, 9.64194, -1.26599, 11.7989, -1.35806, -1.26599, 11.7989, -45.3581, -1.26599, 33.7989, -38.3581, -1.26599, 45.7989, -31.3581, -1.26599, 45.7989, 11.6419, -1.26599, 45.7989, 11.6419, -1.26599, 23.7989, 9.64194, -1.26599, 22.7989, 3.64194, -1.26599, 45.7989, -10.3581, -1.26599, 45.7989, 9.64194, -1.26599, 22.7989, -11.3581, -1.26599, 10.7989, -45.3581, -1.26599, 21.7989, -45.3581, -1.26599, 33.7989, -17.3581, -1.26599, 45.7989, 9.64194, -1.26599, 22.7989, -1.35806, -1.26599, 11.7989, -11.3581, -1.26599, 10.7989, -45.3581, -1.26599, 33.7989, -31.3581, -1.26599, 45.7989, -24.3581, -1.26599, 45.7989, -3.35806, -1.26599, 45.7989, 3.64194, -1.26599, 45.7989, 9.64194, -1.26599, 22.7989, -45.3581, -1.26599, 33.7989, -24.3581, -1.26599, 45.7989, -17.3581, -1.26599, 45.7989, -10.3581, -1.26599, 45.7989, -3.35806, -1.26599, 45.7989, 9.64194, -1.26599, 22.7989, -11.3581, -1.26599, 3.7989, -11.3581, -1.26599, -2.2011, -45.3581, -1.26599, -2.2011, -45.3581, -1.26599, 9.7989, -45.3581, -1.26599, 9.7989, -45.3581, -1.26599, 21.7989, -11.3581, -1.26599, 10.7989, -11.3581, -1.26599, 3.7989, 47.6419, -1.26599, 24.7989, 36.6419, -1.26599, 24.7989, 35.6419, -1.26599, 27.7989, 47.6419, -1.26599, 34.7989, 38.6419, -1.26599, 45.7989, 47.6419, -1.26599, 34.7989, 35.6419, -1.26599, 27.7989, 28.6419, -1.26599, 27.7989, 29.6419, -1.26599, 45.7989, 38.6419, -1.26599, 45.7989, 47.6419, -1.26599, 45.7989, 47.6419, -1.26599, 34.7989, 28.6419, -1.26599, 27.7989, 28.6419, -1.26599, 22.7989, 14.6419, -1.26599, 21.7989, 11.6419, -1.26599, 23.7989, 11.6419, -1.26599, 45.7989, 20.6419, -1.26599, 45.7989, 20.6419, -1.26599, 45.7989, 29.6419, -1.26599, 45.7989, 28.6419, -1.26599, 27.7989 )
+polygons = [ PoolIntArray( 2, 1, 0 ), PoolIntArray( 6, 5, 3 ), PoolIntArray( 3, 5, 4 ), PoolIntArray( 10, 9, 7 ), PoolIntArray( 7, 9, 8 ), PoolIntArray( 14, 13, 11 ), PoolIntArray( 11, 13, 12 ), PoolIntArray( 18, 17, 15 ), PoolIntArray( 15, 17, 16 ), PoolIntArray( 22, 21, 19 ), PoolIntArray( 19, 21, 20 ), PoolIntArray( 26, 25, 23 ), PoolIntArray( 23, 25, 24 ), PoolIntArray( 30, 29, 27 ), PoolIntArray( 27, 29, 28 ), PoolIntArray( 34, 33, 31 ), PoolIntArray( 31, 33, 32 ), PoolIntArray( 38, 37, 35 ), PoolIntArray( 35, 37, 36 ), PoolIntArray( 42, 41, 39 ), PoolIntArray( 39, 41, 40 ), PoolIntArray( 46, 45, 43 ), PoolIntArray( 43, 45, 44 ), PoolIntArray( 50, 49, 47 ), PoolIntArray( 47, 49, 48 ), PoolIntArray( 54, 53, 51 ), PoolIntArray( 51, 53, 52 ), PoolIntArray( 57, 56, 55 ), PoolIntArray( 61, 60, 58 ), PoolIntArray( 58, 60, 59 ), PoolIntArray( 64, 63, 62 ), PoolIntArray( 68, 67, 65 ), PoolIntArray( 65, 67, 66 ), PoolIntArray( 72, 71, 69 ), PoolIntArray( 69, 71, 70 ), PoolIntArray( 75, 74, 73 ), PoolIntArray( 79, 78, 76 ), PoolIntArray( 76, 78, 77 ), PoolIntArray( 83, 82, 80 ), PoolIntArray( 80, 82, 81 ), PoolIntArray( 87, 86, 84 ), PoolIntArray( 84, 86, 85 ), PoolIntArray( 91, 90, 88 ), PoolIntArray( 88, 90, 89 ), PoolIntArray( 94, 93, 92 ), PoolIntArray( 97, 96, 95 ), PoolIntArray( 101, 100, 98 ), PoolIntArray( 98, 100, 99 ), PoolIntArray( 105, 104, 102 ), PoolIntArray( 102, 104, 103 ), PoolIntArray( 108, 107, 106 ), PoolIntArray( 112, 111, 109 ), PoolIntArray( 109, 111, 110 ), PoolIntArray( 116, 115, 113 ), PoolIntArray( 113, 115, 114 ), PoolIntArray( 120, 119, 117 ), PoolIntArray( 117, 119, 118 ), PoolIntArray( 123, 122, 121 ), PoolIntArray( 126, 125, 124 ), PoolIntArray( 130, 129, 127 ), PoolIntArray( 127, 129, 128 ), PoolIntArray( 134, 133, 131 ), PoolIntArray( 131, 133, 132 ), PoolIntArray( 138, 137, 135 ), PoolIntArray( 135, 137, 136 ), PoolIntArray( 141, 140, 139 ), PoolIntArray( 144, 143, 142 ), PoolIntArray( 147, 146, 145 ), PoolIntArray( 151, 150, 148 ), PoolIntArray( 148, 150, 149 ), PoolIntArray( 156, 155, 152 ), PoolIntArray( 152, 155, 153 ), PoolIntArray( 153, 155, 154 ), PoolIntArray( 162, 161, 157 ), PoolIntArray( 157, 161, 160 ), PoolIntArray( 157, 160, 158 ), PoolIntArray( 158, 160, 159 ), PoolIntArray( 165, 164, 163 ), PoolIntArray( 168, 167, 166 ), PoolIntArray( 172, 171, 169 ), PoolIntArray( 169, 171, 170 ), PoolIntArray( 176, 175, 173 ), PoolIntArray( 173, 175, 174 ), PoolIntArray( 179, 178, 177 ), PoolIntArray( 183, 182, 180 ), PoolIntArray( 180, 182, 181 ), PoolIntArray( 189, 188, 184 ), PoolIntArray( 184, 188, 185 ), PoolIntArray( 185, 188, 186 ), PoolIntArray( 186, 188, 187 ), PoolIntArray( 193, 192, 190 ), PoolIntArray( 190, 192, 191 ), PoolIntArray( 196, 195, 194 ), PoolIntArray( 200, 199, 197 ), PoolIntArray( 197, 199, 198 ), PoolIntArray( 203, 202, 201 ), PoolIntArray( 206, 205, 204 ), PoolIntArray( 209, 208, 207 ), PoolIntArray( 212, 211, 210 ), PoolIntArray( 218, 217, 213 ), PoolIntArray( 213, 217, 216 ), PoolIntArray( 213, 216, 215 ), PoolIntArray( 213, 215, 214 ), PoolIntArray( 221, 220, 219 ), PoolIntArray( 225, 224, 222 ), PoolIntArray( 222, 224, 223 ), PoolIntArray( 228, 227, 226 ), PoolIntArray( 231, 230, 229 ), PoolIntArray( 234, 233, 232 ), PoolIntArray( 238, 237, 235 ), PoolIntArray( 235, 237, 236 ), PoolIntArray( 242, 241, 239 ), PoolIntArray( 239, 241, 240 ), PoolIntArray( 247, 246, 243 ), PoolIntArray( 243, 246, 244 ), PoolIntArray( 244, 246, 245 ), PoolIntArray( 253, 252, 248 ), PoolIntArray( 248, 252, 249 ), PoolIntArray( 249, 252, 251 ), PoolIntArray( 249, 251, 250 ), PoolIntArray( 257, 256, 254 ), PoolIntArray( 254, 256, 255 ), PoolIntArray( 260, 259, 258 ), PoolIntArray( 263, 262, 261 ), PoolIntArray( 266, 265, 264 ), PoolIntArray( 270, 269, 267 ), PoolIntArray( 267, 269, 268 ), PoolIntArray( 276, 275, 271 ), PoolIntArray( 271, 275, 274 ), PoolIntArray( 271, 274, 273 ), PoolIntArray( 271, 273, 272 ), PoolIntArray( 279, 278, 277 ), PoolIntArray( 282, 281, 280 ), PoolIntArray( 285, 284, 283 ), PoolIntArray( 288, 287, 286 ), PoolIntArray( 291, 290, 289 ), PoolIntArray( 295, 294, 292 ), PoolIntArray( 292, 294, 293 ), PoolIntArray( 299, 298, 296 ), PoolIntArray( 296, 298, 297 ), PoolIntArray( 303, 302, 300 ), PoolIntArray( 300, 302, 301 ), PoolIntArray( 308, 307, 304 ), PoolIntArray( 304, 307, 306 ), PoolIntArray( 304, 306, 305 ), PoolIntArray( 311, 310, 309 ), PoolIntArray( 317, 316, 312 ), PoolIntArray( 312, 316, 313 ), PoolIntArray( 313, 316, 314 ), PoolIntArray( 314, 316, 315 ), PoolIntArray( 320, 319, 318 ) ]
+cell/size = 1.0
+cell/height = 1.5
+agent/height = 3.0
+agent/radius = 1.0
+
+[sub_resource type="PlaneMesh" id=2]
 size = Vector2( 20, 20 )
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 1 )
 
-[sub_resource type="ConcavePolygonShape" id=3]
+[sub_resource type="ConcavePolygonShape" id=4]
 data = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1 )
 
-[sub_resource type="CubeMesh" id=4]
+[sub_resource type="CubeMesh" id=5]
 size = Vector3( 20, 10, 2 )
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=6]
 albedo_texture = ExtResource( 3 )
 
-[sub_resource type="BoxShape" id=6]
+[sub_resource type="BoxShape" id=7]
 
-[sub_resource type="CubeMesh" id=9]
+[sub_resource type="CubeMesh" id=8]
 
-[sub_resource type="BoxShape" id=10]
+[sub_resource type="BoxShape" id=9]
 
-[sub_resource type="CubeMesh" id=7]
+[sub_resource type="CubeMesh" id=10]
 
-[sub_resource type="BoxShape" id=8]
+[sub_resource type="BoxShape" id=11]
 
 [node name="Game" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646492, 0, -0.0405731 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-
-[node name="Node" type="Node" parent="."]
-
-[node name="Ground" type="MeshInstance" parent="Node"]
-transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 5, 0.641943, -2.98815, -0.0405731 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 2 )
-
-[node name="StaticBody" type="StaticBody" parent="Node/Ground"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Node/Ground/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0 )
-shape = SubResource( 3 )
-
-[node name="DirectionalLight" type="DirectionalLight" parent="Node/Ground"]
-transform = Transform( 0.2, 0, 0, 0, 1.19249e-08, 1, 0, -0.2, 2.38498e-09, 0.000909805, 7.61716, 0 )
-shadow_enabled = true
-
-[node name="MeshInstance" type="MeshInstance" parent="Node"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.738595, 0.777064, -10.1926 )
-mesh = SubResource( 4 )
-material/0 = SubResource( 5 )
-
-[node name="StaticBody" type="StaticBody" parent="Node/MeshInstance"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Node/MeshInstance/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0 )
-shape = SubResource( 6 )
-
-[node name="MeshInstance12" type="MeshInstance" parent="Node"]
-transform = Transform( 3, 0, 0, 0, 5, 0, 0, 0, 1, 32.2925, 1.31034, 25.6659 )
-mesh = SubResource( 9 )
-material/0 = null
-
-[node name="StaticBody" type="StaticBody" parent="Node/MeshInstance12"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Node/MeshInstance12/StaticBody"]
-shape = SubResource( 10 )
-
-[node name="MeshInstance3" type="MeshInstance" parent="Node"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.35351, 1, -0.0405731 )
-mesh = SubResource( 4 )
-material/0 = SubResource( 5 )
-
-[node name="StaticBody" type="StaticBody" parent="Node/MeshInstance3"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Node/MeshInstance3/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0 )
-shape = SubResource( 6 )
-
-[node name="MeshInstance4" type="MeshInstance" parent="Node"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.738595, 0.777064, 9.62953 )
-mesh = SubResource( 4 )
-material/0 = SubResource( 5 )
-
-[node name="StaticBody" type="StaticBody" parent="Node/MeshInstance4"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Node/MeshInstance4/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0 )
-shape = SubResource( 6 )
-
-[node name="MeshInstance2" type="MeshInstance" parent="Node"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.0317, 1, -13.616 )
-mesh = SubResource( 4 )
-material/0 = SubResource( 5 )
-
-[node name="StaticBody" type="StaticBody" parent="Node/MeshInstance2"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Node/MeshInstance2/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0 )
-shape = SubResource( 6 )
-
-[node name="MeshInstance5" type="MeshInstance" parent="Node"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.0353, 1, 12.4747 )
-mesh = SubResource( 4 )
-material/0 = SubResource( 5 )
-
-[node name="StaticBody" type="StaticBody" parent="Node/MeshInstance5"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Node/MeshInstance5/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0 )
-shape = SubResource( 6 )
-
-[node name="MeshInstance6" type="MeshInstance" parent="Node"]
-transform = Transform( 4.36526e-08, 0.0518655, -0.998654, 2.26711e-09, -0.998654, -0.0518655, -1, 0, -4.37114e-08, 10.3116, 7.83182, -1.19583 )
-mesh = SubResource( 4 )
-material/0 = SubResource( 5 )
-
-[node name="StaticBody" type="StaticBody" parent="Node/MeshInstance6"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Node/MeshInstance6/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0 )
-shape = SubResource( 6 )
-
-[node name="MeshInstance7" type="MeshInstance" parent="Node"]
-transform = Transform( -2.18557e-07, 0, 1, 0, 1, 0, -5, 0, -4.37114e-08, 50.4659, 1.83421, 0.0892348 )
-mesh = SubResource( 4 )
-material/0 = SubResource( 5 )
-
-[node name="StaticBody" type="StaticBody" parent="Node/MeshInstance7"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Node/MeshInstance7/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0 )
-shape = SubResource( 6 )
-
-[node name="MeshInstance8" type="MeshInstance" parent="Node"]
-transform = Transform( -2.18557e-07, 0, 1, 0, 1, 0, -5, 0, -4.37114e-08, -48.0389, 1.83421, 0.52598 )
-mesh = SubResource( 4 )
-material/0 = SubResource( 5 )
-
-[node name="StaticBody" type="StaticBody" parent="Node/MeshInstance8"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Node/MeshInstance8/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0 )
-shape = SubResource( 6 )
-
-[node name="MeshInstance9" type="MeshInstance" parent="Node"]
-transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 1, 0.800926, 1.83421, -49.2011 )
-mesh = SubResource( 4 )
-material/0 = SubResource( 5 )
-
-[node name="StaticBody" type="StaticBody" parent="Node/MeshInstance9"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Node/MeshInstance9/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0 )
-shape = SubResource( 6 )
-
-[node name="MeshInstance10" type="MeshInstance" parent="Node"]
-transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 1, 0.800926, 1.83421, 48.3245 )
-mesh = SubResource( 4 )
-material/0 = SubResource( 5 )
-
-[node name="StaticBody" type="StaticBody" parent="Node/MeshInstance10"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Node/MeshInstance10/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0 )
-shape = SubResource( 6 )
-
-[node name="Roof" type="MeshInstance" parent="Node"]
-transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.641943, 3.09217, -0.0405731 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 2 )
-
-[node name="StaticBody" type="StaticBody" parent="Node/Roof"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Node/Roof/StaticBody"]
-transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0 )
-shape = SubResource( 3 )
-
-[node name="MeshInstance11" type="MeshInstance" parent="Node"]
-transform = Transform( 1, 0, 0, 0, 0.258819, 9.65926, 0, -0.965926, 2.58819, 31.3619, -9.34791, -20.5884 )
-mesh = SubResource( 7 )
-material/0 = null
-
-[node name="StaticBody" type="StaticBody" parent="Node/MeshInstance11"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Node/MeshInstance11/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-shape = SubResource( 8 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10408, 0 )
 
 [node name="DirectionalLight2" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.3625, 0 )
 shadow_enabled = true
+
+[node name="Navigation" type="Navigation" parent="."]
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
+navmesh = SubResource( 1 )
+
+[node name="Node" type="Node" parent="Navigation/NavigationMeshInstance"]
+
+[node name="Ground" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Node"]
+transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 5, 0.641943, -2.98815, -0.0405731 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Node/Ground"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Node/Ground/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="Navigation/NavigationMeshInstance/Node/Ground"]
+transform = Transform( 0.2, 0, 0, 0, 1.19249e-08, 1, 0, -0.2, 2.38498e-09, 0.000909805, 7.61716, 0 )
+shadow_enabled = true
+
+[node name="MeshInstance" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Node"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.738595, 0.777064, -10.1926 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Node/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Node/MeshInstance/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 7 )
+
+[node name="MeshInstance12" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Node"]
+transform = Transform( 3, 0, 0, 0, 5, 0, 0, 0, 1, 32.2925, 1.31034, 25.6659 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Node/MeshInstance12"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Node/MeshInstance12/StaticBody"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Node"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.35351, 1, -0.0405731 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Node/MeshInstance3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Node/MeshInstance3/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 7 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Node"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.738595, 0.777064, 9.62953 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Node/MeshInstance4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Node/MeshInstance4/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 7 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Node"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.0317, 1, -13.616 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Node/MeshInstance2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Node/MeshInstance2/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 7 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Node"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.0353, 1, 12.4747 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Node/MeshInstance5"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Node/MeshInstance5/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 7 )
+
+[node name="MeshInstance6" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Node"]
+transform = Transform( 4.36526e-08, 0.0518655, -0.998654, 2.26711e-09, -0.998654, -0.0518655, -1, 0, -4.37114e-08, 10.3116, 7.83182, -1.19583 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Node/MeshInstance6"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Node/MeshInstance6/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 7 )
+
+[node name="MeshInstance7" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Node"]
+transform = Transform( -2.18557e-07, 0, 1, 0, 1, 0, -5, 0, -4.37114e-08, 50.4659, 1.83421, 0.0892348 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Node/MeshInstance7"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Node/MeshInstance7/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 7 )
+
+[node name="MeshInstance8" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Node"]
+transform = Transform( -2.18557e-07, 0, 1, 0, 1, 0, -5, 0, -4.37114e-08, -48.0389, 1.83421, 0.52598 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Node/MeshInstance8"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Node/MeshInstance8/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 7 )
+
+[node name="MeshInstance9" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Node"]
+transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 1, 0.800926, 1.83421, -49.2011 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Node/MeshInstance9"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Node/MeshInstance9/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 7 )
+
+[node name="MeshInstance10" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Node"]
+transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 1, 0.800926, 1.83421, 48.3245 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Node/MeshInstance10"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Node/MeshInstance10/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 7 )
+
+[node name="Roof" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Node"]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.641943, 3.09217, -0.0405731 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Node/Roof"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Node/Roof/StaticBody"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance11" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Node"]
+transform = Transform( 1, 0, 0, 0, 0.258819, 9.65926, 0, -0.965926, 2.58819, 31.3619, -9.34791, -20.5884 )
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Node/MeshInstance11"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Node/MeshInstance11/StaticBody"]
+shape = SubResource( 11 )
+
+[node name="Enemy" parent="Navigation" instance=ExtResource( 4 )]
