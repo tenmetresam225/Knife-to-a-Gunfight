@@ -212,3 +212,4 @@ material/0 = null
 shape = SubResource( 11 )
 
 [node name="Enemy" parent="Navigation" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.7182, 1.01828, 0 )

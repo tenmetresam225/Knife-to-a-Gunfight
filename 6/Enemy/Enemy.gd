@@ -27,3 +27,9 @@ func move_to(target_pos):
 
 func _on_Timer_timeout():
 	move_to(player.global_transform.origin)
+
+
+func _on_Area_body_entered(body):
+	if (body.name == "Player"):
+		Global.player_health -= 10
+		queue_free()

@@ -80,3 +80,6 @@ func _physics_process (delta):
 	# jump if we press the jump button and are standing on the floor
 	if Input.is_action_pressed("jump") and is_on_floor():
 		playerVelocity.y = jumpStrength
+	if Global.player_health <= 0:
+		print("Dead")
+		get_tree().change_scene("res://Lose.tscn")
