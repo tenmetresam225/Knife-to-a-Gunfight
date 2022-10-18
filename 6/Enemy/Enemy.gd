@@ -4,6 +4,7 @@ onready var nav = get_parent()
 var path = []
 var path_node = 0
 var speed = 10
+var health = 100
 onready var player = $"../../Player"
 
 
@@ -32,4 +33,9 @@ func _on_Timer_timeout():
 func _on_Area_body_entered(body):
 	if (body.name == "Player"):
 		Global.player_health -= 10
+		queue_free()
+
+func take_damage(damage):
+	health -= 50
+	if health <=0:
 		queue_free()

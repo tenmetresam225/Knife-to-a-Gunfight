@@ -45,7 +45,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646492, 0, -0.0405731 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10408, 0 )
 
 [node name="DirectionalLight2" type="DirectionalLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.3625, 0 )
+transform = Transform( 1, 0, 0, 0, 0.794775, 0.606904, 0, -0.606904, 0.794775, 0, 16.5623, 36.8085 )
 shadow_enabled = true
 
 [node name="Navigation" type="Navigation" parent="."]
@@ -65,10 +65,6 @@ material/0 = SubResource( 3 )
 [node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Node/Ground/StaticBody"]
 transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0 )
 shape = SubResource( 4 )
-
-[node name="DirectionalLight" type="DirectionalLight" parent="Navigation/NavigationMeshInstance/Node/Ground"]
-transform = Transform( 0.2, 0, 0, 0, 1.19249e-08, 1, 0, -0.2, 2.38498e-09, 0.000909805, 7.61716, 0 )
-shadow_enabled = true
 
 [node name="MeshInstance" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Node"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.738595, 0.777064, -10.1926 )

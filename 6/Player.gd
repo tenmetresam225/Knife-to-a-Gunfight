@@ -16,6 +16,10 @@ var mouseDelta : Vector2 = Vector2()			# How much the mouse has moved since last
 
 # player components
 onready var camera = get_node("Camera")		# "attach" the camera to access from script.
+onready var bulletScene = preload("res://bullet.tscn")
+onready var bulletSpawn = get_node("Camera/bulletSpawn")
+var ammo : int = 15
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -48,6 +52,17 @@ func _process (delta):
   
 	# reset the mouse delta vector
 	mouseDelta = Vector2()
+	
+	if Input.is_action_just_pressed("shoot"):
+		shoot()
+
+func shoot():
+	var bullet = bulletScene.instance()
+	get_node("/root/Game").add_child(bullet)
+	bullet.global_transform = bulletSpawn.global_transform
+	bullet.scale = Vector3(0.1,0.1,0.1)
+
+	ammo -= 1
 
 # called every physics step
 func _physics_process (delta):
