@@ -62,6 +62,7 @@ func shoot():
 	bullet.global_transform = bulletSpawn.global_transform
 	bullet.scale = Vector3(0.1,0.1,0.1)
 
+
 	ammo -= 1
 
 # called every physics step
